@@ -1,0 +1,2 @@
+cloudtrail
+https://cloudonaut.io/deep-dive-aws-cloudtrail/
