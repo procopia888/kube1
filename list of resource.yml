@@ -1,0 +1,15 @@
+
+
+
+
+# kubectl logs -f ebs-csi-controller-88cb488bf-4kp4g -c ebs-plugin -nkube-system
+
+
+# aws eks describe-cluster --name YOUR_CLUSTER_NAME --query "cluster.identity.oidc.issuer" --output text https://oidc.eks.us-east-1.amazonaws.com/id/35D7115425CB83ADD24AFF16427BA8DD
+
+
+# kubectl logs -f ebs-csi-controller-88cb488bf-272wr -c csi-provisioner -nkube-system
+
+
+# apply driver :
+# kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.30"
