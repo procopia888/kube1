@@ -14,15 +14,26 @@ spec:
     spec:
       containers:
       - name: mongodb
-        #image: mongo:3.6.5-jessie
-        image: mongo:5.0.26-focal
+        image: mongo:3.6.5-jessie
+        #image: mongo:latest
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
+          
         volumeMounts:
-          - name: my-volume
+          - name: mongodb
             mountPath: /data/db
-      volumes:
-        - name: my-volume
-          persistentVolumeClaim:
-            claimName: my-pvc
+      volumes: 
+      - name: mongodb
+        persistentVolumeClaim:
+          claimName: mongodb-pvc
+         
+
+            
 ---
 apiVersion: v1
 kind: Service
